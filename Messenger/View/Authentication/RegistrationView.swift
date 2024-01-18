@@ -8,19 +8,58 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    @State private var email = ""
+    @State private var password = ""
+    @State private var username = ""
+    @State private var fullName = ""
+    @Environment(\.presentationMode) var mode
     var body: some View {
-        ZStack {
-            Color.background
-                .ignoresSafeArea()
-            VStack() {
-                HStack {
-                    Text("Who are you?")
-                        .foregroundStyle(.accent)
-                        .font(.largeTitle)
+        
+            ZStack {
+                Color.background
+                    .ignoresSafeArea()
+                VStack() {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("So,")
+                                .foregroundStyle(.specPurple)
+                                .font(.largeTitle)
+                            Text("Who are you?")
+                                .foregroundStyle(.accent)
+                                .font(.largeTitle)
+                        }
+                        Spacer()
+                    }
+                    
+                    VStack(spacing: 40){
+                        CustomTextField(titleKey: "Email", textBinding: $email, imageName: "mail", height: 50, isSecured: false)
+                        CustomTextField(titleKey: "Username", textBinding: $email, imageName: "person", height: 50, isSecured: false)
+                        CustomTextField(titleKey: "Full Name", textBinding: $email, imageName: "person", height: 50, isSecured: false)
+                        CustomTextField(titleKey: "Password", textBinding: $password, imageName: "lock", height: 50, isSecured: true)
+                    }
+                    .padding([.top, .horizontal ],25)
+                    .foregroundStyle(.accent)
                     Spacer()
+                    Button(action: {},
+                           label: {
+                        Text("Sign Up")
+                            .font(.headline)
+                            .frame(height: 55)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.specBlue)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    })
+                    Spacer()
+                    Button(action: {mode.wrappedValue.dismiss()}, label: {
+                        Text("Already have an account? Sign in")
+                    })
+                   
                 }
+                .padding(.horizontal)
+                .padding(.top, 40)
             }
-        }
+            .navigationBarBackButtonHidden()
+        
     }
 }
 

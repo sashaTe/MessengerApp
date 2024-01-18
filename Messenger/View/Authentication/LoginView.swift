@@ -28,11 +28,11 @@ struct LoginView: View {
                         Spacer()
                     }
                     
-                    VStack(spacing: 20){
-                        CustomTextField(titleKey: "Email", textBinding: $email, imageName: "mail", height: 40, isSecured: false)
-                        CustomTextField(titleKey: "Password", textBinding: $password, imageName: "lock", height: 40, isSecured: true)
+                    VStack(spacing: 40){
+                        CustomTextField(titleKey: "Email", textBinding: $email, imageName: "mail", height: 50, isSecured: false)
+                        CustomTextField(titleKey: "Password", textBinding: $password, imageName: "lock", height: 50, isSecured: true)
                     }
-                    .padding([.top, .horizontal, .bottom],25)
+                    .padding([.top, .horizontal ],25)
                     .foregroundStyle(.accent)
                     HStack {
                         Spacer()
@@ -43,11 +43,12 @@ struct LoginView: View {
                                 .padding(.trailing)
                         }
                     }
+                    .padding(.bottom, 20)
                     Button(action: {},
                            label: {
                         Text("Sign in")
                             .font(.headline)
-                            .frame(height: 50)
+                            .frame(height: 55)
                             .frame(maxWidth: .infinity)
                             .background(Color.specBlue)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
