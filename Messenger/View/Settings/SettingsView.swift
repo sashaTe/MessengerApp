@@ -15,14 +15,15 @@ struct SettingsView: View {
                 SettingsHeader()
                 
                 VStack(spacing: 1){
-                    ForEach((0..<3)) { _ in
-                        SettingCell()
+                    ForEach(SettingsCellViewModel.allCases, id: \.self) { viewModel in
+                        SettingCell(viewModel: viewModel)
                     }
                 }
 
                 Button(action: {},
                        label: {
                     Text("Log Out")
+                        .foregroundStyle(.red)
                         .font(.headline)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
