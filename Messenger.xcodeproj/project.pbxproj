@@ -16,6 +16,13 @@
 		285DE0EF2B5980BB002D7E7B /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE0EE2B5980BB002D7E7B /* View+.swift */; };
 		285DE0F22B59906B002D7E7B /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE0F12B59906B002D7E7B /* SubmitButton.swift */; };
 		285DE0F42B5990D2002D7E7B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE0F32B5990D2002D7E7B /* CustomTextField.swift */; };
+		285DE0F72B59B5BA002D7E7B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE0F62B59B5BA002D7E7B /* MainTabView.swift */; };
+		285DE0FC2B59D792002D7E7B /* ChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE0FB2B59D792002D7E7B /* ChannelsView.swift */; };
+		285DE0FE2B59D7BC002D7E7B /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE0FD2B59D7BC002D7E7B /* ChatsView.swift */; };
+		285DE1002B59D7D4002D7E7B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE0FF2B59D7D4002D7E7B /* SettingsView.swift */; };
+		285DE1032B59D842002D7E7B /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE1022B59D842002D7E7B /* ConversationView.swift */; };
+		285DE1052B59DFB1002D7E7B /* SettingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE1042B59DFB1002D7E7B /* SettingHeader.swift */; };
+		285DE1072B59E02F002D7E7B /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE1062B59E02F002D7E7B /* SettingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,13 @@
 		285DE0EE2B5980BB002D7E7B /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		285DE0F12B59906B002D7E7B /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		285DE0F32B5990D2002D7E7B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		285DE0F62B59B5BA002D7E7B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		285DE0FB2B59D792002D7E7B /* ChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsView.swift; sourceTree = "<group>"; };
+		285DE0FD2B59D7BC002D7E7B /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
+		285DE0FF2B59D7D4002D7E7B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		285DE1022B59D842002D7E7B /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
+		285DE1042B59DFB1002D7E7B /* SettingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingHeader.swift; sourceTree = "<group>"; };
+		285DE1062B59E02F002D7E7B /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +121,11 @@
 		285DE0CC2B5974EE002D7E7B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				285DE1012B59D829002D7E7B /* Conversations */,
+				285DE0FA2B59D777002D7E7B /* Settings */,
+				285DE0F92B59D771002D7E7B /* Chat */,
+				285DE0F82B59D75E002D7E7B /* Channels */,
+				285DE0F52B59B5AA002D7E7B /* Main */,
 				285DE0F02B59904B002D7E7B /* Components */,
 				285DE0CE2B59752C002D7E7B /* Authentication */,
 			);
@@ -144,6 +163,48 @@
 				285DE0F32B5990D2002D7E7B /* CustomTextField.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		285DE0F52B59B5AA002D7E7B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				285DE0F62B59B5BA002D7E7B /* MainTabView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		285DE0F82B59D75E002D7E7B /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				285DE0FB2B59D792002D7E7B /* ChannelsView.swift */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		285DE0F92B59D771002D7E7B /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				285DE0FD2B59D7BC002D7E7B /* ChatsView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		285DE0FA2B59D777002D7E7B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				285DE0FF2B59D7D4002D7E7B /* SettingsView.swift */,
+				285DE1062B59E02F002D7E7B /* SettingCell.swift */,
+				285DE1042B59DFB1002D7E7B /* SettingHeader.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		285DE1012B59D829002D7E7B /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				285DE1022B59D842002D7E7B /* ConversationView.swift */,
+			);
+			path = Conversations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,11 +279,18 @@
 			files = (
 				285DE0F42B5990D2002D7E7B /* CustomTextField.swift in Sources */,
 				285DE0D02B59754B002D7E7B /* LoginView.swift in Sources */,
+				285DE0FE2B59D7BC002D7E7B /* ChatsView.swift in Sources */,
+				285DE0FC2B59D792002D7E7B /* ChannelsView.swift in Sources */,
+				285DE1072B59E02F002D7E7B /* SettingCell.swift in Sources */,
 				285DE0F22B59906B002D7E7B /* SubmitButton.swift in Sources */,
+				285DE0F72B59B5BA002D7E7B /* MainTabView.swift in Sources */,
 				285DE0BE2B597499002D7E7B /* ContentView.swift in Sources */,
 				285DE0BC2B597499002D7E7B /* MessengerApp.swift in Sources */,
 				285DE0EF2B5980BB002D7E7B /* View+.swift in Sources */,
 				285DE0D22B59755A002D7E7B /* RegistrationView.swift in Sources */,
+				285DE1002B59D7D4002D7E7B /* SettingsView.swift in Sources */,
+				285DE1052B59DFB1002D7E7B /* SettingHeader.swift in Sources */,
+				285DE1032B59D842002D7E7B /* ConversationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
