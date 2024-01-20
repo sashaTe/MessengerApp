@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StatusSelectorView: View {
+    // TODO: - change to state?
+    @ObservedObject var viewModel = StatusViewModel()
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
@@ -16,7 +18,7 @@ struct StatusSelectorView: View {
                     Text("CURRENTLY SET TO")
                         .foregroundStyle(Color.specBlack)
                         .padding()
-                    StatusCell(status: UserStatus(rawValue: 4)!)
+                    StatusCell(status: viewModel.status)
                         .padding(.horizontal)
                         .background(Color.specPurple)
                     //status cell
@@ -25,7 +27,7 @@ struct StatusSelectorView: View {
                         $0 != .notConfigured
                     }), id: \.self) { status in
                         Button {
-                            
+                            viewModel.updateStatus(status)
                         } label: {
                             StatusCell(status: status)
                         }
@@ -48,7 +50,7 @@ struct StatusCell: View {
     let status: UserStatus
     var body: some View {
         VStack(spacing: 1) {
-            Text(viewModel.title)
+            Text(status.title)
                     .frame(height: 50)
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 
