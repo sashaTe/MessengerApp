@@ -9,6 +9,9 @@ import SwiftUI
 
 struct EditProfileView: View {
     @State private var fullName = "Tim Cook"
+    @State private var showImagePicker = false
+    @State private var selectedImage: UIImage?
+    @State private var profileImage: Image?
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
@@ -20,18 +23,28 @@ struct EditProfileView: View {
                     HStack {
                         //photo/edit button
                         VStack {
-                            Image(systemName: "person")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 65, height: 65)
-                                .clipShape(Circle())
+                            if let profileImage {
+                                profileImage
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 65, height: 65)
+                                    .clipShape(Circle())
+                            } else {
+                                Image(systemName: "person")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 65, height: 65)
+                                    .clipShape(Circle())
+                            }
                             
                             Button {
-                                
+                                showImagePicker.toggle()
                             } label: {
                                 Text("Edit")
                             }
-
+                            .sheet(isPresented: $showImagePicker, onDismiss: loadImage, content: {
+                                ImagePicker(selectedAvatar: $selectedImage, isPhotoPickerShowing: $showImagePicker)
+                            })
                         }
                         Text("Enter your name or change your profile photo")
                             .font(.system(size: 16))
@@ -72,6 +85,11 @@ struct EditProfileView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Edit Profile")
+    }
+    func loadImage() {
+        guard let selectedImage else {return}
+        profileImage = Image(uiImage: selectedImage)
+        
     }
 }
 
