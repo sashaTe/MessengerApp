@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ConversationCell: View {
+struct UserCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -16,7 +16,7 @@ struct ConversationCell: View {
                 Image(systemName: "person")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 50, height: 50)
+                    .frame(width: 40, height: 40)
                     .clipShape(Circle())
                     .foregroundStyle(.accent)
                 //message info
@@ -25,7 +25,7 @@ struct ConversationCell: View {
                         .font(.caption2)
                         .bold()
                         .foregroundStyle(.white)
-                    Text("Hello! How are you doing? Do you have plans on Monday?")
+                    Text("@timCook")
                         .font(.caption)
                         .foregroundStyle(.white).opacity(0.7)
                 }
@@ -33,10 +33,12 @@ struct ConversationCell: View {
             }
             Divider()
         }
+        .padding(.top)
+        .padding(.horizontal)
         
     }
 }
 
 #Preview {
-    ConversationCell()
+    UserCell()
 }

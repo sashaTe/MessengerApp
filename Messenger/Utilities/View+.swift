@@ -6,7 +6,13 @@
 //
 
 import SwiftUI
-
+//example
+/*
+TextField("", text: $text)
+    .placeholder(when: text.isEmpty) {
+        Text("Placeholder").foregroundColor(.gray)
+    }
+*/
 extension View {
     func placeholder<Content: View> (
         when shouldShow: Bool,
