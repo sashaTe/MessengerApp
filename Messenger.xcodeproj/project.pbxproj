@@ -14,6 +14,7 @@
 		280944D22B5C8B20009B8FE1 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280944D12B5C8B20009B8FE1 /* SearchBar.swift */; };
 		280944D42B5D35B0009B8FE1 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280944D32B5D35B0009B8FE1 /* ChatBubble.swift */; };
 		280944D62B5D368F009B8FE1 /* MesssageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280944D52B5D368F009B8FE1 /* MesssageView.swift */; };
+		280944D82B5D3A11009B8FE1 /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280944D72B5D3A11009B8FE1 /* CustomInputView.swift */; };
 		285DE0BC2B597499002D7E7B /* MessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE0BB2B597499002D7E7B /* MessengerApp.swift */; };
 		285DE0BE2B597499002D7E7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE0BD2B597499002D7E7B /* ContentView.swift */; };
 		285DE0C02B59749B002D7E7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285DE0BF2B59749B002D7E7B /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		280944D12B5C8B20009B8FE1 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		280944D32B5D35B0009B8FE1 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		280944D52B5D368F009B8FE1 /* MesssageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesssageView.swift; sourceTree = "<group>"; };
+		280944D72B5D3A11009B8FE1 /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
 		285DE0B82B597499002D7E7B /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		285DE0BB2B597499002D7E7B /* MessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerApp.swift; sourceTree = "<group>"; };
 		285DE0BD2B597499002D7E7B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				285DE0FD2B59D7BC002D7E7B /* ChatsView.swift */,
 				280944D32B5D35B0009B8FE1 /* ChatBubble.swift */,
 				280944D52B5D368F009B8FE1 /* MesssageView.swift */,
+				280944D72B5D3A11009B8FE1 /* CustomInputView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				285DE1092B59E634002D7E7B /* SettingsCellViewModel.swift in Sources */,
 				285DE10B2B59EE36002D7E7B /* EditProfileView.swift in Sources */,
 				285DE0D02B59754B002D7E7B /* LoginView.swift in Sources */,
+				280944D82B5D3A11009B8FE1 /* CustomInputView.swift in Sources */,
 				285DE0FE2B59D7BC002D7E7B /* ChatsView.swift in Sources */,
 				285DE0FC2B59D792002D7E7B /* ChannelsView.swift in Sources */,
 				280944D62B5D368F009B8FE1 /* MesssageView.swift in Sources */,

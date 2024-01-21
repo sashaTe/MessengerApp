@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ChatView: View {
+    @State private var messageText = ""
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
@@ -20,13 +21,17 @@ struct ChatView: View {
                         }
                     }
                 }
-                //input view
+                CustomInputView(text: $messageText, action: sendMessage)
             }
             .navigationTitle("Tim")
             .navigationBarTitleDisplayMode(.inline)
             .padding(.vertical)
             .foregroundStyle(.accent)
         }
+    }
+    func sendMessage() {
+        print("Send message \(messageText)")
+        messageText = ""
     }
 }
 
