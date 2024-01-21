@@ -12,7 +12,14 @@ struct MesssageView: View {
     var body: some View {
         HStack {
             if isFromCurrentUser {
-                
+                Text("Some message for nowSome message for now")
+                      .padding(10)
+                      .background(Color.specPurple)
+                      .font(.caption)
+                      .clipShape(ChatBubble(isFromCurrentUser: isFromCurrentUser))
+                      .foregroundStyle(.white)
+                      .padding(.leading, 100)
+                      .padding(.horizontal)
             } else {
                 HStack(alignment: .bottom) {
                     Image(systemName: "person")
@@ -21,13 +28,20 @@ struct MesssageView: View {
                         .frame(width: 30, height: 30)
                         .clipShape(Circle())
                     
-                  
+                  Text("Some message for nowSome message for now")
+                        .padding(10)
+                        .background(Color.specBlack)
+                        .font(.caption)
+                        .clipShape(ChatBubble(isFromCurrentUser: isFromCurrentUser))
+                        .foregroundStyle(.white)
                 }
+                .padding(.horizontal)
+                .padding(.trailing, 120)
             }
         }
     }
 }
 
 #Preview {
-    MesssageView(isFromCurrentUser: false)
+    MesssageView(isFromCurrentUser: true)
 }
