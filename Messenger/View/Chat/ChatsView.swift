@@ -9,7 +9,24 @@ import SwiftUI
 
 struct ChatView: View {
     var body: some View {
-        Text("Chat View")
+        ZStack {
+            Color.background.ignoresSafeArea()
+            VStack {
+                //messages
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 12) {
+                        ForEach((0...10), id: \.self) { _ in
+                            MesssageView(isFromCurrentUser: false)
+                        }
+                    }
+                }
+                //input view
+            }
+            .navigationTitle("Tim")
+            .navigationBarTitleDisplayMode(.inline)
+            .padding(.vertical)
+            .foregroundStyle(.accent)
+        }
     }
 }
 

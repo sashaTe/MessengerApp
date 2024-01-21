@@ -19,8 +19,13 @@ struct ConversationsView: View {
                 VStack(alignment: .leading) {
                     HStack { Spacer()}
                     ForEach((0...10), id: \.self) {_ in
-                        ConversationCell()
-                            .padding(.horizontal)
+                        NavigationLink {
+                            ChatView()
+                        } label: {
+                            ConversationCell()
+                        }
+
+
                     }
                 }
             }
