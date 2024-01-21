@@ -25,10 +25,4 @@ extension View {
         }
     }
 }
-//example
-/*
-TextField("", text: $text)
-    .placeholder(when: text.isEmpty) {
-        Text("Placeholder").foregroundColor(.gray)
-    }
-*/
+

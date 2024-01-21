@@ -41,7 +41,7 @@ struct MainTabView: View {
                         
                 }
             .navigationTitle(tabTitle)
-            .navigationBarColor(UIColor(Color.specBlue))
+
             
         }
     }

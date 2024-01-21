@@ -11,6 +11,9 @@
 		280944CA2B5C7262009B8FE1 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280944C92B5C7262009B8FE1 /* ConversationCell.swift */; };
 		280944CE2B5C794A009B8FE1 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280944CD2B5C794A009B8FE1 /* NewMessageView.swift */; };
 		280944D02B5C7961009B8FE1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280944CF2B5C7961009B8FE1 /* UserCell.swift */; };
+		280944D22B5C8B20009B8FE1 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280944D12B5C8B20009B8FE1 /* SearchBar.swift */; };
+		280944D42B5D35B0009B8FE1 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280944D32B5D35B0009B8FE1 /* ChatBubble.swift */; };
+		280944D62B5D368F009B8FE1 /* MesssageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280944D52B5D368F009B8FE1 /* MesssageView.swift */; };
 		285DE0BC2B597499002D7E7B /* MessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE0BB2B597499002D7E7B /* MessengerApp.swift */; };
 		285DE0BE2B597499002D7E7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE0BD2B597499002D7E7B /* ContentView.swift */; };
 		285DE0C02B59749B002D7E7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285DE0BF2B59749B002D7E7B /* Assets.xcassets */; };
@@ -38,6 +41,9 @@
 		280944C92B5C7262009B8FE1 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		280944CD2B5C794A009B8FE1 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 		280944CF2B5C7961009B8FE1 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		280944D12B5C8B20009B8FE1 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		280944D32B5D35B0009B8FE1 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		280944D52B5D368F009B8FE1 /* MesssageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesssageView.swift; sourceTree = "<group>"; };
 		285DE0B82B597499002D7E7B /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		285DE0BB2B597499002D7E7B /* MessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerApp.swift; sourceTree = "<group>"; };
 		285DE0BD2B597499002D7E7B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 				285DE0CC2B5974EE002D7E7B /* View */,
 				285DE0CB2B5974ED002D7E7B /* ViewModel */,
 				285DE0CA2B5974EB002D7E7B /* API */,
+				285DE0ED2B5980A4002D7E7B /* Extension */,
 				285DE0C92B5974E1002D7E7B /* Utilities */,
 				285DE0BB2B597499002D7E7B /* MessengerApp.swift */,
 				285DE0BD2B597499002D7E7B /* ContentView.swift */,
@@ -115,8 +122,8 @@
 		285DE0C92B5974E1002D7E7B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				285DE0ED2B5980A4002D7E7B /* Extension */,
 				280944C52B5C6156009B8FE1 /* ImagePicker.swift */,
+				280944D12B5C8B20009B8FE1 /* SearchBar.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -173,6 +180,7 @@
 				285DE0EE2B5980BB002D7E7B /* View+.swift */,
 			);
 			name = Extension;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		285DE0F02B59904B002D7E7B /* Components */ = {
@@ -204,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				285DE0FD2B59D7BC002D7E7B /* ChatsView.swift */,
+				280944D32B5D35B0009B8FE1 /* ChatBubble.swift */,
+				280944D52B5D368F009B8FE1 /* MesssageView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -307,7 +317,9 @@
 				285DE0D02B59754B002D7E7B /* LoginView.swift in Sources */,
 				285DE0FE2B59D7BC002D7E7B /* ChatsView.swift in Sources */,
 				285DE0FC2B59D792002D7E7B /* ChannelsView.swift in Sources */,
+				280944D62B5D368F009B8FE1 /* MesssageView.swift in Sources */,
 				285DE1072B59E02F002D7E7B /* SettingCell.swift in Sources */,
+				280944D42B5D35B0009B8FE1 /* ChatBubble.swift in Sources */,
 				280944C62B5C6156009B8FE1 /* ImagePicker.swift in Sources */,
 				280944CA2B5C7262009B8FE1 /* ConversationCell.swift in Sources */,
 				280944CE2B5C794A009B8FE1 /* NewMessageView.swift in Sources */,
@@ -317,6 +329,7 @@
 				287537632B5C0B85006368D6 /* StatusSelectorView.swift in Sources */,
 				285DE0BC2B597499002D7E7B /* MessengerApp.swift in Sources */,
 				285DE0EF2B5980BB002D7E7B /* View+.swift in Sources */,
+				280944D22B5C8B20009B8FE1 /* SearchBar.swift in Sources */,
 				285DE0D22B59755A002D7E7B /* RegistrationView.swift in Sources */,
 				285DE1002B59D7D4002D7E7B /* SettingsView.swift in Sources */,
 				285DE1052B59DFB1002D7E7B /* SettingHeader.swift in Sources */,
@@ -464,6 +477,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,6 +507,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

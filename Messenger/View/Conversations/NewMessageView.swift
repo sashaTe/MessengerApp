@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct NewMessageView: View {
+    @Binding var showChatView: Bool
+    @State private var isEditing = false
+    @State private var searchText = ""
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
             ScrollView {
+                SearchBar(text: $searchText, isEditing: $isEditing)
+                    .onTapGesture {
+                        isEditing.toggle()
+                    }
+                    
                 VStack(alignment:.leading) {
                     ForEach((0...10), id: \.self) { _ in
-                    UserCell()
+                        Button(action: {
+                            showChatView.toggle()
+                            presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            UserCell()
+                        })
                     }
                 }
             }
@@ -23,5 +37,5 @@ struct NewMessageView: View {
 }
 
 #Preview {
-    NewMessageView()
+    NewMessageView(showChatView: .constant(true))
 }
