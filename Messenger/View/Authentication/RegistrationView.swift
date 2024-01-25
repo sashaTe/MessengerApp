@@ -34,14 +34,14 @@ struct RegistrationView: View {
                     
                     VStack(spacing: 40){
                         CustomTextField(titleKey: "Email", textBinding: $email, imageName: "mail", height: 50, isSecured: false)
-                        CustomTextField(titleKey: "Username", textBinding: $email, imageName: "person", height: 50, isSecured: false)
-                        CustomTextField(titleKey: "Full Name", textBinding: $email, imageName: "person", height: 50, isSecured: false)
+                        CustomTextField(titleKey: "Username", textBinding: $username, imageName: "person", height: 50, isSecured: false)
+                        CustomTextField(titleKey: "Full Name", textBinding: $fullName, imageName: "person", height: 50, isSecured: false)
                         CustomTextField(titleKey: "Password", textBinding: $password, imageName: "lock", height: 50, isSecured: true)
                     }
                     .padding([.top, .horizontal ],25)
                     .foregroundStyle(.accent)
                     Spacer()
-                    Button(action: {viewModel.register()},
+                    Button(action: {viewModel.register(withEmail: email, password: password, fullName: fullName, username: username)},
                            label: {
                         Text("Sign Up")
                             .font(.headline)
