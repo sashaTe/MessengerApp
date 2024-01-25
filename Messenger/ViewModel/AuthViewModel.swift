@@ -17,8 +17,16 @@ class AuthViewModel: NSObject, ObservableObject {
     override init() {
         userSession = Auth.auth().currentUser
     }
-    func login() {
-        print("Login viewModel")
+    func login(with email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error {
+                print("DEBUG: Failed to SIGN IN with error \(error.localizedDescription)")
+                return
+            }
+            
+            guard let user = result?.user else { return }
+            self.userSession = user
+        }
     }
     
     func register(withEmail email: String, password: String, fullName: String, username: String) {
@@ -55,6 +63,7 @@ class AuthViewModel: NSObject, ObservableObject {
     }
     
     func signOut() {
-        
+        self.userSession = nil
+        try? Auth.auth().signOut()
     }
 }
