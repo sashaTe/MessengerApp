@@ -45,7 +45,7 @@ struct LoginView: View {
                         }
                     }
                     .padding(.bottom, 20)
-                    Button(action: {viewModel.login()},
+                    Button(action: {viewModel.login(with: email, password: password)},
                            label: {
                         Text("Sign in")
                             .font(.headline)
