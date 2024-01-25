@@ -19,6 +19,7 @@ struct RegistrationView: View {
             ZStack {
                 Color.background
                     .ignoresSafeArea()
+                NavigationLink(destination: ProfilePhotoSelectorView(), isActive: $viewModel.didAuthenticateUser) { }
                 VStack() {
                     HStack {
                         VStack(alignment: .leading) {

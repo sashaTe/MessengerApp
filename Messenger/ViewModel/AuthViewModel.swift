@@ -9,6 +9,8 @@ import Firebase
 
 
 class AuthViewModel: NSObject, ObservableObject {
+    @Published var didAuthenticateUser = false
+    
     func login() {
         print("Login viewModel")
     }
@@ -25,7 +27,7 @@ class AuthViewModel: NSObject, ObservableObject {
                                        "username": username,
                                        "fullname": fullName]
             Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
-                print("Updated userInfo in firestore")
+                self.didAuthenticateUser = true
             }
         }
 
