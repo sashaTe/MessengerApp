@@ -57,7 +57,7 @@ class AuthViewModel: NSObject, ObservableObject {
             return}
         ImageUploader.uploadImage(image: image) { imageUrl in
             Firestore.firestore().collection("users").document(uid).updateData(["profileImageUrl" : imageUrl]) { _ in
-                print("Successfully updated user data")
+                self.userSession = self.tempCurrentUser
             }
         }
     }
