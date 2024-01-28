@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsHeader: View {
+    let user: User
+
     var body: some View {
         ZStack {
             Color.specBlack
@@ -23,7 +25,7 @@ struct SettingsHeader: View {
                     .padding(.leading)
                 
                 VStack(alignment: .leading) {
-                    Text("Tim Cook")
+                    Text(user.fullname)
                     Text("Online")
                 }
                 Spacer()
@@ -33,6 +35,6 @@ struct SettingsHeader: View {
     }
 }
 
-#Preview {
-    SettingsHeader()
-}
+//#Preview {
+//    SettingsHeader()
+//}

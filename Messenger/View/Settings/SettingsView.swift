@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    let user: User
+
     var body: some View {
         
             ZStack {
@@ -18,7 +20,7 @@ struct SettingsView: View {
                     NavigationLink {
                         EditProfileView()
                     } label: {
-                        SettingsHeader()
+                        SettingsHeader(user: user)
                     }
 
                     
@@ -48,8 +50,8 @@ struct SettingsView: View {
     }
 }
 
-#Preview {
-    SettingsView()
-}
+//#Preview {
+//    SettingsView()
+//}
 
 
