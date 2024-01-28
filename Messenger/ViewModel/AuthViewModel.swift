@@ -6,6 +6,7 @@
 //
 
 import Firebase
+import FirebaseStorage
 import UIKit
 
 
@@ -15,7 +16,9 @@ class AuthViewModel: NSObject, ObservableObject {
     private var tempCurrentUser: FirebaseAuth.User?
     
     override init() {
+        super.init()
         userSession = Auth.auth().currentUser
+        fetchUser()
     }
     func login(with email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
@@ -65,5 +68,13 @@ class AuthViewModel: NSObject, ObservableObject {
     func signOut() {
         self.userSession = nil
         try? Auth.auth().signOut()
+    }
+    
+    func fetchUser() {
+        guard let uid = userSession?.uid else { return }
+        Firestore.firestore().collection("users").document().getDocument { snapshot, _ in
+            guard let data = snapshot?.data() else { return }
+            print("USER DATA IS: \(data)")
+        }
     }
 }
