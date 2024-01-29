@@ -48,7 +48,7 @@ class AuthViewModel: NSObject, ObservableObject {
             let data: [String: Any] = ["email": email,
                                        "username": username,
                                        "fullname": fullName]
-            Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
+            collectionUsers.document(user.uid).setData(data) { _ in
                 self.didAuthenticateUser = true
             }
         }
@@ -62,7 +62,7 @@ class AuthViewModel: NSObject, ObservableObject {
             print ("NO user uid found")
             return}
         ImageUploader.uploadImage(image: image) { imageUrl in
-            Firestore.firestore().collection("users").document(uid).updateData(["profileImageUrl" : imageUrl]) { _ in
+            collectionUsers.document(uid).updateData(["profileImageUrl" : imageUrl]) { _ in
                 self.userSession = self.tempCurrentUser
             }
         }
@@ -75,7 +75,7 @@ class AuthViewModel: NSObject, ObservableObject {
     
     func fetchUser() {
         guard let uid = userSession?.uid else { return }
-        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, _ in
+        collectionUsers.document(uid).getDocument { snapshot, _ in
             guard let user = try? snapshot?.data(as: User.self) else { return }
             self.currentUser = user
             

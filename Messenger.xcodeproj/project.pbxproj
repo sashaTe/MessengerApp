@@ -38,6 +38,8 @@
 		285DE1092B59E634002D7E7B /* SettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE1082B59E634002D7E7B /* SettingsCellViewModel.swift */; };
 		285DE10B2B59EE36002D7E7B /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285DE10A2B59EE36002D7E7B /* EditProfileView.swift */; };
 		285E8A902B67A55A00035835 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 285E8A8F2B67A55A00035835 /* Kingfisher */; };
+		285E8A922B68012F00035835 /* NewMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E8A912B68012F00035835 /* NewMessageViewModel.swift */; };
+		285E8A942B6801DB00035835 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E8A932B6801DB00035835 /* Constants.swift */; };
 		286966682B5D3C8A0092BF67 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286966672B5D3C8A0092BF67 /* Message.swift */; };
 		2869666A2B5D3CEE0092BF67 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286966692B5D3CEE0092BF67 /* ChatViewModel.swift */; };
 		2869666C2B5D41440092BF67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2869666B2B5D41440092BF67 /* GoogleService-Info.plist */; };
@@ -104,6 +106,8 @@
 		285DE1062B59E02F002D7E7B /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		285DE1082B59E634002D7E7B /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
 		285DE10A2B59EE36002D7E7B /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		285E8A912B68012F00035835 /* NewMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewModel.swift; sourceTree = "<group>"; };
+		285E8A932B6801DB00035835 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		286966672B5D3C8A0092BF67 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		286966692B5D3CEE0092BF67 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		2869666B2B5D41440092BF67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -197,6 +201,7 @@
 			children = (
 				280944C52B5C6156009B8FE1 /* ImagePicker.swift */,
 				280944D12B5C8B20009B8FE1 /* SearchBar.swift */,
+				285E8A932B6801DB00035835 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				287537642B5C10A4006368D6 /* UserStatus.swift */,
 				286966692B5D3CEE0092BF67 /* ChatViewModel.swift */,
 				2821D3742B629A8A009B7A76 /* AuthViewModel.swift */,
+				285E8A912B68012F00035835 /* NewMessageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				285DE0F42B5990D2002D7E7B /* CustomTextField.swift in Sources */,
+				285E8A942B6801DB00035835 /* Constants.swift in Sources */,
 				285DE1092B59E634002D7E7B /* SettingsCellViewModel.swift in Sources */,
 				285DE10B2B59EE36002D7E7B /* EditProfileView.swift in Sources */,
 				285DE0D02B59754B002D7E7B /* LoginView.swift in Sources */,
@@ -441,6 +448,7 @@
 				280944C62B5C6156009B8FE1 /* ImagePicker.swift in Sources */,
 				280944CA2B5C7262009B8FE1 /* ConversationCell.swift in Sources */,
 				280944CE2B5C794A009B8FE1 /* NewMessageView.swift in Sources */,
+				285E8A922B68012F00035835 /* NewMessageViewModel.swift in Sources */,
 				285DE0F22B59906B002D7E7B /* SubmitButton.swift in Sources */,
 				2821D3772B62A629009B7A76 /* ProfilePhotoSelectorView.swift in Sources */,
 				285DE0F72B59B5BA002D7E7B /* MainTabView.swift in Sources */,

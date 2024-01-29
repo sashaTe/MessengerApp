@@ -12,6 +12,7 @@ struct NewMessageView: View {
     @State private var isEditing = false
     @State private var searchText = ""
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var viewModel = NewMessageViewModel()
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
@@ -22,12 +23,12 @@ struct NewMessageView: View {
                     }
                     
                 VStack(alignment:.leading) {
-                    ForEach((0...10), id: \.self) { _ in
+                    ForEach(viewModel.users) { user in
                         Button(action: {
                             showChatView.toggle()
                             presentationMode.wrappedValue.dismiss()
                         }, label: {
-                            UserCell()
+                            UserCell(user: user)
                         })
                     }
                 }
