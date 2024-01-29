@@ -47,6 +47,8 @@ struct MainTabView: View {
 
                 
             }
+        } else {
+            Text("No user")
         }
         }
     var tabTitle: String {

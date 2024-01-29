@@ -39,9 +39,9 @@ struct RegistrationView: View {
                         CustomTextField(titleKey: "Full Name", textBinding: $fullName, imageName: "person", height: 50, isSecured: false)
                         CustomTextField(titleKey: "Password", textBinding: $password, imageName: "lock", height: 50, isSecured: true)
                     }
-                    .padding([.top, .horizontal ],25)
+                    .padding([.top],25)
                     .foregroundStyle(.accent)
-                    Spacer()
+//                    Spacer()
                     Button(action: {viewModel.register(withEmail: email, password: password, fullName: fullName, username: username)},
                            label: {
                         Text("Sign Up")
@@ -51,6 +51,7 @@ struct RegistrationView: View {
                             .background(Color.specBlue)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                     })
+                    .padding(.top, 40)
                     Spacer()
                     Button(action: {mode.wrappedValue.dismiss()}, label: {
                         Text("Already have an account? Sign in")
@@ -67,4 +68,5 @@ struct RegistrationView: View {
 
 #Preview {
     RegistrationView()
+        .environmentObject(AuthViewModel())
 }
