@@ -12,7 +12,7 @@ struct MainTabView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     init() {
     UITabBar.appearance().backgroundColor = UIColor.specBlack
-        UITabBar.appearance().unselectedItemTintColor = UIColor.white
+    UITabBar.appearance().unselectedItemTintColor = UIColor.white
     
     }
     var body: some View {
