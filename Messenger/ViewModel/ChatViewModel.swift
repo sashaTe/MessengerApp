@@ -5,12 +5,15 @@
 //  Created by Alexander Zarutskiy on 21.01.2024.
 //
 
-import Foundation
+import SwiftUI
+import Firebase
 
 class ChatViewModel: ObservableObject {
     @Published var messages = [Message]()
     
-    init() {
+    let user: User
+    init(user: User) {
+        self.user = user
     }
 //    var mockMessages: [Message] {
 //        [
@@ -26,6 +29,22 @@ class ChatViewModel: ObservableObject {
 //    }
     
     func sendMessage(_ messageText: String) {
-
+        guard let currentUid = AuthViewModel.shared.userSession?.uid else { return }
+        guard let chatPartnerId = user.id else { return }
+        
+        let currentUserRef = collectionMessages.document(currentUid).collection(chatPartnerId).document()
+        let chatPartnerRef = collectionMessages.document(chatPartnerId).collection(currentUid)
+        
+        let messageId = currentUserRef.documentID
+        
+        let data: [String: Any] = ["text": messageText,
+                                   "fromId": currentUid,
+                                   "toId": chatPartnerId,
+                                   "read": false,
+                                   "timestamp": Timestamp(date: Date())
+        ]
+        
+        currentUserRef.setData(data)
+        chatPartnerRef.document(messageId).setData(data)
     }
 }
