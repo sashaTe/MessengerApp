@@ -10,6 +10,13 @@ import SwiftUI
 struct ChatView: View {
     @State private var messageText = ""
     @ObservedObject var viewModel = ChatViewModel()
+    
+    private let user: User
+    
+    init(user: User) {
+        self.user = user
+    }
+    
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
@@ -24,7 +31,7 @@ struct ChatView: View {
                 }
                 CustomInputView(text: $messageText, action: sendMessage)
             }
-            .navigationTitle("Tim")
+            .navigationTitle(user.username)
             .navigationBarTitleDisplayMode(.inline)
             .padding(.vertical)
             .foregroundStyle(.accent)
@@ -37,5 +44,5 @@ struct ChatView: View {
 }
 
 #Preview {
-    ChatView()
+    ChatView(user: User.init(username: "TIMCOOK", fullname: "TIM COOK", email: "tim@apple.com", profileImageUrl: nil))
 }

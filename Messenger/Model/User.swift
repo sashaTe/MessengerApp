@@ -6,6 +6,7 @@
 //
 
 import FirebaseFirestoreSwift
+import Foundation
 
 // TODO: 
 struct User: Identifiable, Decodable {
@@ -16,3 +17,5 @@ struct User: Identifiable, Decodable {
     let profileImageUrl: String?
     
 }
+
+let mockUser = User(id: UUID().uuidString, username: "TIM", fullname: "TIM COOK", email: "tim@apple.com", profileImageUrl: nil)
