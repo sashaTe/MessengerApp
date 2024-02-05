@@ -71,7 +71,13 @@ class AuthViewModel: NSObject, ObservableObject {
     
     func signOut() {
         self.userSession = nil
-        try? Auth.auth().signOut()
+        do {
+            try Auth.auth().signOut()
+            print("signout")
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
     }
     
     func fetchUser() {

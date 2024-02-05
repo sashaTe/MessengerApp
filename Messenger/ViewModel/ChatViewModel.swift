@@ -14,19 +14,22 @@ class ChatViewModel: ObservableObject {
     let user: User
     init(user: User) {
         self.user = user
+        fetchMessages()
     }
-//    var mockMessages: [Message] {
-//        [
-//            .init(isFromCurrentUser: true, messageText: "Hi! How are you doing?"),
-//            .init(isFromCurrentUser: false, messageText: "I'm ok, you?"),
-//            .init(isFromCurrentUser: true, messageText: "I'm fine"),
-//            .init(isFromCurrentUser: true, messageText: "What you doing today?"),
-//            .init(isFromCurrentUser: false, messageText: "Chilling"),
-//            .init(isFromCurrentUser: true, messageText: "Wanna go footbal?"),
-//            .init(isFromCurrentUser: true, messageText: "at 8PM")
-//
-//        ]
-//    }
+    
+    func fetchMessages() {
+        guard let currentUid = AuthViewModel.shared.userSession?.uid else { return }
+        guard let chatPartnerId = user.id else { return }
+        print("chatPartner is \(user.username)")
+        let query = collectionMessages.document(currentUid).collection(chatPartnerId)
+        query.getDocuments { snapshot, error in
+            guard let documents = snapshot?.documents else { return }
+            self.messages = documents.compactMap{ try? $0.data(as: Message.self) }
+        }
+
+
+    }
+
     
     func sendMessage(_ messageText: String) {
         guard let currentUid = AuthViewModel.shared.userSession?.uid else { return }

@@ -26,7 +26,7 @@ struct ChatView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 12) {
                         ForEach(viewModel.messages) { message in
-//                            MesssageView(isFromCurrentUser: message.isFromCurrentUser, messageText: message.messageText)
+                            MesssageView(viewModel: MessageViewModel(message: message))
                         }
                     }
                 }
@@ -37,10 +37,14 @@ struct ChatView: View {
             .padding(.vertical)
             .foregroundStyle(.accent)
         }
+        .onAppear(perform: {
+            viewModel.fetchMessages()
+        })
     }
     func sendMessage() {
         viewModel.sendMessage(messageText)
         messageText = ""
+        viewModel.fetchMessages()
     }
 }
 
