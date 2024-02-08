@@ -20,7 +20,15 @@ class ChatViewModel: ObservableObject {
     func fetchMessages() {
         guard let currentUid = AuthViewModel.shared.userSession?.uid else { return }
         guard let chatPartnerId = user.id else { return }
-        let query = collectionMessages.document(currentUid).collection(chatPartnerId)
+        let query = collectionMessages
+            .document(currentUid)
+            .collection(chatPartnerId)
+            .order(by: "timestamp", descending: false)
+            
+            
+        
+            
+        
         query.getDocuments { snapshot, error in
             guard let documents = snapshot?.documents else { return }
             var messages = documents.compactMap{ try? $0.data(as: Message.self) }

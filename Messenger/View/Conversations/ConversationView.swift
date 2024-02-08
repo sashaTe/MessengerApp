@@ -26,8 +26,6 @@ struct ConversationsView: View {
                         } label: {
                             ConversationCell()
                         }
-
-
                     }
                 }
             }
