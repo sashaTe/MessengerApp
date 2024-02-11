@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ConversationCell: View {
+    let viewModel: MessageViewModel
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -21,11 +22,11 @@ struct ConversationCell: View {
                     .foregroundStyle(.accent)
                 //message info
                 VStack(alignment: .leading) {
-                 Text("Tim Cook")
+                    Text("Tim Cook")
                         .font(.caption2)
                         .bold()
                         .foregroundStyle(.white)
-                    Text("Hello! How are you doing? Do you have plans on Monday?")
+                    Text(viewModel.message.text)
                         .font(.caption)
                         .foregroundStyle(.white).opacity(0.7)
                 }
@@ -37,6 +38,6 @@ struct ConversationCell: View {
     }
 }
 
-#Preview {
-    ConversationCell()
-}
+//#Preview {
+//    ConversationCell()
+//}

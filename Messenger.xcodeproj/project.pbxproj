@@ -73,6 +73,7 @@
 		286966A32B5D41EA0092BF67 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 286966A22B5D41EA0092BF67 /* FirebaseStorageCombine-Community */; };
 		287537632B5C0B85006368D6 /* StatusSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287537622B5C0B85006368D6 /* StatusSelectorView.swift */; };
 		287537652B5C10A4006368D6 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287537642B5C10A4006368D6 /* UserStatus.swift */; };
+		28B2CC4E2B793C440064F0C8 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B2CC4D2B793C440064F0C8 /* ConversationsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		2869666B2B5D41440092BF67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		287537622B5C0B85006368D6 /* StatusSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSelectorView.swift; sourceTree = "<group>"; };
 		287537642B5C10A4006368D6 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
+		28B2CC4D2B793C440064F0C8 /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				2821D3742B629A8A009B7A76 /* AuthViewModel.swift */,
 				285E8A912B68012F00035835 /* NewMessageViewModel.swift */,
 				281D84F22B70F3160079D802 /* MessageViewModel.swift */,
+				28B2CC4D2B793C440064F0C8 /* ConversationsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				285DE0BC2B597499002D7E7B /* MessengerApp.swift in Sources */,
 				285DE0EF2B5980BB002D7E7B /* View+.swift in Sources */,
 				280944D22B5C8B20009B8FE1 /* SearchBar.swift in Sources */,
+				28B2CC4E2B793C440064F0C8 /* ConversationsViewModel.swift in Sources */,
 				285DE0D22B59755A002D7E7B /* RegistrationView.swift in Sources */,
 				286966682B5D3C8A0092BF67 /* Message.swift in Sources */,
 				2869666A2B5D3CEE0092BF67 /* ChatViewModel.swift in Sources */,
