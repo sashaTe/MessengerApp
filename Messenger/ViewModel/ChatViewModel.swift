@@ -44,10 +44,8 @@ class ChatViewModel: ObservableObject {
         guard let currentUid = AuthViewModel.shared.userSession?.uid else { return }
         guard let chatPartnerId = user.id else { return }
         
-        let currentUserRef = collectionMessages.document(currentUid).collection(chatPartnerId).document()
+        let currentUserRef = collectionMessages.document(currentUid).collection(chatPartnerId)
         let chatPartnerRef = collectionMessages.document(chatPartnerId).collection(currentUid)
-        
-        let messageId = currentUserRef.documentID
         
         let data: [String: Any] = ["text": messageText,
                                    "fromId": currentUid,
@@ -56,7 +54,8 @@ class ChatViewModel: ObservableObject {
                                    "timestamp": Timestamp(date: Date())
         ]
         
-        currentUserRef.setData(data)
-        chatPartnerRef.document(messageId).setData(data)
+        currentUserRef.addDocument(data: data)
+        chatPartnerRef.addDocument(data: data)
     }
+
 }
