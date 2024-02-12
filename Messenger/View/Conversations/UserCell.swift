@@ -43,6 +43,6 @@ struct UserCell: View {
 
 #Preview {
     UserCell(
-        user: .init(username: "TIMCOOK", fullname: "TIM COOK", email: "tim@apple.com", profileImageUrl: nil)
+        user: .init(username: "TIMCOOK", fullname: "TIM COOK", email: "tim@apple.com", profileImageUrl: "nil")
     )
 }

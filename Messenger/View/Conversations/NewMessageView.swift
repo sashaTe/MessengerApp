@@ -40,5 +40,5 @@ struct NewMessageView: View {
 }
 
 #Preview {
-    NewMessageView(showChatView: .constant(true), user: .constant(User.init(username: "TIM", fullname: "TIM COOK", email: "Tim@apple.com", profileImageUrl: nil)) )
+    NewMessageView(showChatView: .constant(true), user: .constant(User.init(username: "TIM", fullname: "TIM COOK", email: "Tim@apple.com", profileImageUrl: "nil")) )
 }

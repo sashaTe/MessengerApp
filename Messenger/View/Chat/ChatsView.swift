@@ -26,7 +26,7 @@ struct ChatView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 12) {
                         ForEach(viewModel.messages) { message in
-                            MesssageView(viewModel: MessageViewModel(message: message))
+                            MesssageView(viewModel: MessageViewModel( message))
                         }
                     }
                 }
@@ -44,10 +44,10 @@ struct ChatView: View {
     func sendMessage() {
         viewModel.sendMessage(messageText)
         messageText = ""
-//        viewModel.fetchMessages()
+        viewModel.fetchMessages()
     }
 }
-
-#Preview {
-    ChatView(user: User.init(username: "TIMCOOK", fullname: "TIM COOK", email: "tim@apple.com", profileImageUrl: nil))
-}
+//
+//#Preview {
+//    ChatView(user: User.init(username: "TIMCOOK", fullname: "TIM COOK", email: "tim@apple.com", profileImageUrl: nil))
+//}

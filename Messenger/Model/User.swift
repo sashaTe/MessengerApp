@@ -14,8 +14,8 @@ struct User: Identifiable, Decodable {
     let username: String
     let fullname: String
     let email: String
-    let profileImageUrl: String?
+    let profileImageUrl: String
     
 }
 
-let mockUser = User(id: UUID().uuidString, username: "TIM", fullname: "TIM COOK", email: "tim@apple.com", profileImageUrl: nil)
+
