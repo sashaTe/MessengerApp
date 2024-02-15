@@ -37,7 +37,7 @@ struct MesssageView: View {
                         KFImage(viewModel.profileImageUrl)
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 30, height: 30)
+                            .frame(width: 27, height: 27)
                             .clipShape(Circle())
                         Group {
                             Text(viewModel.fullname)
