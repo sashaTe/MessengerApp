@@ -14,7 +14,7 @@ class ChatViewModel: ObservableObject {
     let user: User
     init(user: User) {
         self.user = user
-//        fetchMessages()
+        fetchMessages()
     }
     
     func fetchMessages() {
@@ -27,14 +27,19 @@ class ChatViewModel: ObservableObject {
             
             
         
-        query.addSnapshotListener { snapshot, error in
+        query.addSnapshotListener { snapshot, _ in
             guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
             var messages = changes.compactMap{ try? $0.document.data(as: Message.self) }
             
             for (index, message) in messages.enumerated() where message.fromId != currentUid {
+            if !self.messages.contains(where: {$0.id == message.id}) {
                 messages[index].user = self.user
+//                self.messages.append(messages[index])
+
+            }
             }
             self.messages.append(contentsOf: messages)
+
         }
 
     }

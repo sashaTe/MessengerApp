@@ -23,12 +23,8 @@ struct ConversationsView: View {
                     HStack { Spacer()}
 
                     ForEach(viewModel.recentMessages) { message in
-                        NavigationLink {
-//                            ChatView(user: mockUser)
-                        } label: {
-                            ConversationCell(viewModel: MessageViewModel(message))
-                                .padding(.horizontal)
-                        }
+                        ConversationCell(viewModel: ConversationCellViewModel(message))
+                            .padding(.horizontal)
                     }
                 }
             }

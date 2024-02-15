@@ -85,6 +85,7 @@ struct EditProfileView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Edit Profile")
+        .navigationBarColor(UIColor(Color.accentColor))
     }
     func loadImage() {
         guard let selectedImage else {return}

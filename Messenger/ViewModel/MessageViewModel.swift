@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
-class MessageViewModel: ObservableObject {
-    @Published var user: User?
+struct MessageViewModel {
+   
     let message: Message
     
     init(_ message: Message) {
@@ -28,23 +29,15 @@ class MessageViewModel: ObservableObject {
         return URL(string: profileImageUrl)
     }
     
-    var chatPartnerId: String {
-        return message.fromId == currentUid ? message.toId : message.fromId
-    }
-    
-    var chatPartnerProfileImageUrl: URL? {
-        guard let user = user else { return nil }
-        return URL(string: user.profileImageUrl)
-    }
     var fullname: String {
-        guard let user = user else { return ""}
+        guard let user = message.user else { return ""}
         return user.fullname
     }
     
-    func fetchUser() {
-        collectionUsers.document(chatPartnerId).getDocument { snapshot, _ in
-            self.user = try? snapshot?.data(as: User.self)
-            
-        }
+    var time: String {
+        
+        return formatTransactionTimestamp(message.timestamp)
+        
     }
+
 }

@@ -74,6 +74,9 @@
 		287537632B5C0B85006368D6 /* StatusSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287537622B5C0B85006368D6 /* StatusSelectorView.swift */; };
 		287537652B5C10A4006368D6 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287537642B5C10A4006368D6 /* UserStatus.swift */; };
 		28B2CC4E2B793C440064F0C8 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B2CC4D2B793C440064F0C8 /* ConversationsViewModel.swift */; };
+		28C92AC02B7BAB7400DBD029 /* ConversationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C92ABF2B7BAB7400DBD029 /* ConversationCellViewModel.swift */; };
+		28C92AC22B7CD9D300DBD029 /* NavigationBarColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C92AC12B7CD9D300DBD029 /* NavigationBarColorModifier.swift */; };
+		28C92AC42B7EB1DA00DBD029 /* DateFromTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C92AC32B7EB1DA00DBD029 /* DateFromTimestamp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +120,9 @@
 		287537622B5C0B85006368D6 /* StatusSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSelectorView.swift; sourceTree = "<group>"; };
 		287537642B5C10A4006368D6 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
 		28B2CC4D2B793C440064F0C8 /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
+		28C92ABF2B7BAB7400DBD029 /* ConversationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCellViewModel.swift; sourceTree = "<group>"; };
+		28C92AC12B7CD9D300DBD029 /* NavigationBarColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarColorModifier.swift; sourceTree = "<group>"; };
+		28C92AC32B7EB1DA00DBD029 /* DateFromTimestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFromTimestamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +212,8 @@
 				280944C52B5C6156009B8FE1 /* ImagePicker.swift */,
 				280944D12B5C8B20009B8FE1 /* SearchBar.swift */,
 				285E8A932B6801DB00035835 /* Constants.swift */,
+				28C92AC12B7CD9D300DBD029 /* NavigationBarColorModifier.swift */,
+				28C92AC32B7EB1DA00DBD029 /* DateFromTimestamp.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 				285E8A912B68012F00035835 /* NewMessageViewModel.swift */,
 				281D84F22B70F3160079D802 /* MessageViewModel.swift */,
 				28B2CC4D2B793C440064F0C8 /* ConversationsViewModel.swift */,
+				28C92ABF2B7BAB7400DBD029 /* ConversationCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -441,6 +450,7 @@
 				285DE0F42B5990D2002D7E7B /* CustomTextField.swift in Sources */,
 				285E8A942B6801DB00035835 /* Constants.swift in Sources */,
 				285DE1092B59E634002D7E7B /* SettingsCellViewModel.swift in Sources */,
+				28C92AC02B7BAB7400DBD029 /* ConversationCellViewModel.swift in Sources */,
 				285DE10B2B59EE36002D7E7B /* EditProfileView.swift in Sources */,
 				285DE0D02B59754B002D7E7B /* LoginView.swift in Sources */,
 				284CFB8C2B66CEE900C83FED /* User.swift in Sources */,
@@ -449,6 +459,7 @@
 				2821D3792B62DE34009B7A76 /* ImageUploader.swift in Sources */,
 				285DE0FC2B59D792002D7E7B /* ChannelsView.swift in Sources */,
 				280944D62B5D368F009B8FE1 /* MesssageView.swift in Sources */,
+				28C92AC42B7EB1DA00DBD029 /* DateFromTimestamp.swift in Sources */,
 				285DE1072B59E02F002D7E7B /* SettingCell.swift in Sources */,
 				280944D42B5D35B0009B8FE1 /* ChatBubble.swift in Sources */,
 				280944C62B5C6156009B8FE1 /* ImagePicker.swift in Sources */,
@@ -467,6 +478,7 @@
 				285DE0D22B59755A002D7E7B /* RegistrationView.swift in Sources */,
 				286966682B5D3C8A0092BF67 /* Message.swift in Sources */,
 				2869666A2B5D3CEE0092BF67 /* ChatViewModel.swift in Sources */,
+				28C92AC22B7CD9D300DBD029 /* NavigationBarColorModifier.swift in Sources */,
 				285DE1002B59D7D4002D7E7B /* SettingsView.swift in Sources */,
 				2821D3752B629A8A009B7A76 /* AuthViewModel.swift in Sources */,
 				285DE1052B59DFB1002D7E7B /* SettingHeader.swift in Sources */,

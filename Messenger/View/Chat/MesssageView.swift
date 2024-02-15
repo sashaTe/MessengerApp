@@ -15,28 +15,51 @@ struct MesssageView: View {
         HStack {
             if viewModel.isFromCurrentUser {
                 Spacer()
-                Text(viewModel.message.text)
-                      .padding(10)
-                      .background(Color.specPurple)
-                      .font(.caption)
-                      .clipShape(ChatBubble(isFromCurrentUser: true))
-                      .foregroundStyle(.white)
-                      .padding(.leading, 200)
-                      .padding(.horizontal)
-            } else {
-                HStack(alignment: .bottom) {
-                    KFImage(viewModel.profileImageUrl)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 30, height: 30)
-                        .clipShape(Circle())
-                    
-                    Text(viewModel.message.text)
-                        .padding(10)
-                        .background(Color.specBlack)
-                        .font(.caption)
-                        .clipShape(ChatBubble(isFromCurrentUser: true))
+                VStack(alignment: .trailing) {
+                    Text(viewModel.time)
+                        .font(.caption2)
                         .foregroundStyle(.white)
+                        .opacity(0.2)
+                    Text(viewModel.message.text)
+                          .padding(10)
+                          .background(Color.specPurple)
+                          .font(.caption)
+                          .clipShape(ChatBubble(isFromCurrentUser: true))
+                          .foregroundStyle(.white)
+
+                }
+                .padding(.leading, 200)
+                .padding(.horizontal)
+            } else {
+                VStack(alignment: .leading) {
+                    HStack {
+                        KFImage(viewModel.profileImageUrl)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 30, height: 30)
+                            .clipShape(Circle())
+                        Group {
+                            Text(viewModel.fullname)
+                                .font(.caption)
+                                .foregroundStyle(.white)
+                                .opacity(0.5)
+                            Text(viewModel.time)
+                                .font(.caption2)
+                                .foregroundStyle(.white)
+                                .opacity(0.2)
+                        }
+                        
+                    }
+                    
+                HStack(alignment: .center) {
+
+                        Text(viewModel.message.text)
+                            .padding(10)
+                            .background(Color.specBlack)
+                            .font(.caption)
+                            .clipShape(ChatBubble(isFromCurrentUser: false))
+                            .foregroundStyle(.white)
+                    }
                 }
                 .padding(.horizontal)
                 .padding(.trailing, 150)
