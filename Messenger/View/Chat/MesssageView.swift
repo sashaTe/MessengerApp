@@ -21,11 +21,12 @@ struct MesssageView: View {
                         .foregroundStyle(.white)
                         .opacity(0.2)
                     Text(viewModel.message.text)
-                          .padding(10)
+                          .padding(15)
                           .background(Color.specPurple)
                           .font(.caption)
                           .clipShape(ChatBubble(isFromCurrentUser: true))
                           .foregroundStyle(.white)
+                          
 
                 }
                 .padding(.leading, 200)
@@ -47,6 +48,7 @@ struct MesssageView: View {
                                 .font(.caption2)
                                 .foregroundStyle(.white)
                                 .opacity(0.2)
+                                .padding(.leading, 5)
                         }
                         
                     }
@@ -54,11 +56,12 @@ struct MesssageView: View {
                 HStack(alignment: .center) {
 
                         Text(viewModel.message.text)
-                            .padding(10)
+                            .padding(15)
                             .background(Color.specBlack)
                             .font(.caption)
                             .clipShape(ChatBubble(isFromCurrentUser: false))
                             .foregroundStyle(.white)
+                            
                     }
                 }
                 .padding(.horizontal)

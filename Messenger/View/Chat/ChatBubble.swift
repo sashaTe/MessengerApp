@@ -14,7 +14,7 @@ struct ChatBubble: Shape {
         let topRight: UIRectCorner = .topRight
         let bottomLeft: UIRectCorner = .bottomLeft
         let bottomRight: UIRectCorner = isFromCurrentUser ? .topLeft : .bottomRight
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [topLeft, topRight, bottomLeft, bottomRight], cornerRadii: CGSize(width: 16, height: 16))
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [topLeft, topRight, bottomLeft, bottomRight], cornerRadii: CGSize(width: 10, height: 10))
 //        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.topLeft, .topRight, isFromCurrentUser ? .bottomLeft : .bottomRight], cornerRadii: CGSize(width: 16, height: 16))
         return Path(path.cgPath)
     }

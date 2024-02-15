@@ -22,9 +22,9 @@ struct CustomInputView: View {
                     .frame(minHeight: 30)
                 
                 Button(action: {action()}, label: {
-                    Text("Send")
-                        .bold()
+                    Image(systemName: "paperplane")
                         .foregroundStyle(.accent)
+                        .font(.title2)
                 })
             }
             .padding(.bottom, 8)
