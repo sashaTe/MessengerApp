@@ -13,7 +13,7 @@ struct SearchBar: View {
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-            TextField("Seardddddch...", text: $text)
+            TextField("", text: $text)
                 .placeholder(when: !isEditing) {
                     Text("Search...").foregroundColor(.gray)
                 }
