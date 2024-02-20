@@ -1,7 +1,3 @@
-Certainly! Here's a suggested README file for your GitHub repository:
-
----
-
 # Messenger App
 
 Messenger is a chat iOS app developed using SwiftUI and Firebase. It showcases real-time data synchronization, user authentication, and interactive messaging features for an engaging user experience.
