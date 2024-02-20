@@ -45,7 +45,7 @@ class ChatViewModel: ObservableObject {
     }
 
     
-    func sendMessage(_ messageText: String) {
+    func sendMessage(_ messageText: String, imageUrl: String?) {
         guard let currentUid = AuthViewModel.shared.userSession?.uid else { return }
         guard let chatPartnerId = user.id else { return }
         
@@ -55,12 +55,16 @@ class ChatViewModel: ObservableObject {
         let recentCurrentRef = collectionMessages.document(currentUid).collection("recent-messages").document(chatPartnerId)
         let recentPartnerRef = collectionMessages.document(chatPartnerId).collection("recent-messages").document(currentUid)
         
-        let data: [String: Any] = ["text": messageText,
+        var data: [String: Any] = ["text": messageText,
                                    "fromId": currentUid,
                                    "toId": chatPartnerId,
                                    "read": false,
                                    "timestamp": Timestamp(date: Date())
         ]
+        
+        if let imageUrl = imageUrl {
+            data["imageUrl"] = imageUrl
+        }
         
         currentUserRef.addDocument(data: data)
         chatPartnerRef.addDocument(data: data)

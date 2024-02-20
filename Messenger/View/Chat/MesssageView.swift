@@ -26,8 +26,6 @@ struct MesssageView: View {
                           .font(.caption)
                           .clipShape(ChatBubble(isFromCurrentUser: true))
                           .foregroundStyle(.white)
-                          
-
                 }
                 .padding(.leading, 200)
                 .padding(.horizontal)
@@ -50,9 +48,7 @@ struct MesssageView: View {
                                 .opacity(0.2)
                                 .padding(.leading, 5)
                         }
-                        
                     }
-                    
                 HStack(alignment: .center) {
 
                         Text(viewModel.message.text)

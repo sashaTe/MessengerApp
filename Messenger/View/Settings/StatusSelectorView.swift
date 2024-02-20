@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StatusSelectorView: View {
     // TODO: - change to state?
-    @ObservedObject var viewModel = StatusViewModel()
+    @StateObject var viewModel = StatusViewModel()
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()

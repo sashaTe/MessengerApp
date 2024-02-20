@@ -27,7 +27,11 @@ struct SettingsHeader: View {
                 
                 VStack(alignment: .leading) {
                     Text(user.fullname)
+                        .foregroundStyle(.specPurple)
+                        .font(.headline)
                     Text("Online")
+                        .font(.callout)
+                        .opacity(0.9)
                 }
                 Spacer()
             }

@@ -28,6 +28,9 @@ struct ConversationsView: View {
                     }
                 }
             }
+            .onAppear {
+                viewModel.fetchRecentMessages()
+            }
             
             Button(action: {
                 showMessageView.toggle()

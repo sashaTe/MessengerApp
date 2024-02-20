@@ -6,13 +6,21 @@
 //
 
 import SwiftUI
+import Kingfisher
+
+final class ChatViewNavigation: ObservableObject {
+    @Published var showSheet = false
+}
 
 struct ChatView: View {
+    
     @State private var messageText = ""
     @State private var scrollTarget: String?
     @State var keyboardHeight: CGFloat = 0
+    @State private var isPhotoPickerShowing = false
+    @State private var selectedImage: UIImage?
     @ObservedObject var viewModel: ChatViewModel
-    
+    @StateObject private var navigation = ChatViewNavigation()
     private let user: User
     
     init(user: User) {
@@ -26,7 +34,7 @@ struct ChatView: View {
             VStack {
                 //messages
                 scrollView
-                CustomInputView(text: $messageText, action: sendMessage)
+                CustomInputView(text: $messageText, isPhotoPickerShowing: $navigation.showSheet, action: sendMessage)
             }
             .navigationTitle(user.username)
             .navigationBarColor(UIColor(Color.accentColor))
@@ -34,6 +42,10 @@ struct ChatView: View {
             .padding(.vertical)
             .foregroundStyle(.accent)
         }
+        
+        .sheet(isPresented: $navigation.showSheet, content: {
+            ImagePicker(selectedAvatar: $selectedImage, isPhotoPickerShowing: $navigation.showSheet)
+        })
         .onAppear(perform: {
 //            viewModel.fetchMessages()
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) { (data) in
@@ -46,9 +58,12 @@ struct ChatView: View {
         })
     }
     func sendMessage() {
-        viewModel.sendMessage(messageText)
+        viewModel.sendMessage(messageText, imageUrl: nil)
         messageText = ""
 //        viewModel.fetchMessages()
+    }
+    func loadImage() {
+        guard let selectedImage else {return}
     }
 }
 //

@@ -13,7 +13,7 @@ struct NewMessageView: View {
     @State private var searchText = ""
     @Binding var user: User?
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel = NewMessageViewModel()
+    @StateObject var viewModel = NewMessageViewModel()
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()

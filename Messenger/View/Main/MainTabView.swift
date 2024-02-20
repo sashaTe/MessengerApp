@@ -25,21 +25,21 @@ struct MainTabView: View {
                         .onTapGesture {
                             selectedIndex = 0
                         }
-                            .tabItem { Image(systemName: "message") }
+                            .tabItem { Image(systemName: "text.bubble") }
                             .tag(0)
                         
                         ChannelsView()
                         .onTapGesture {
                             selectedIndex = 1
                         }
-                            .tabItem { Image(systemName: "bubble.left.and.bubble.right") }
+                            .tabItem { Image(systemName: "archivebox") }
                             .tag(1)
                         
                     SettingsView(user: user)
                         .onTapGesture {
                             selectedIndex = 2
                         }
-                            .tabItem { Image(systemName: "gear") }
+                            .tabItem { Image(systemName: "person.crop.square") }
                             .tag(2)
                             
                     }
