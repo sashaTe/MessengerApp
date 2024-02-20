@@ -8,14 +8,13 @@ Messenger is a chat iOS app developed using SwiftUI and Firebase. It showcases r
 - **Real-time Data Synchronization:** Demonstrates proficiency in Firebase to enable real-time updates of messages.
 - **User Authentication:** Implements Firebase authentication for secure user login and registration.
 - **Interactive Messaging Features:** Includes features like sending text messages, images, and emojis.
+- **Image Loading:** Utilize Kingfisher to efficiently load and cache images
 - **Responsive User Interface:** Designed with a seamless and responsive UI to enhance usability across different devices.
 
-## Installation
+## Dependencies
 
-1. Clone the repository: `git clone https://github.com/your_username/messenger-app.git`
-2. Install dependencies: `pod install`
-3. Open the Xcode workspace: `open Messenger.xcworkspace`
-4. Build and run the project on your iOS device or simulator.
+1. Firebase: For real-time database and authentication.
+2. Kingfisher: For efficient image loading and caching.
 
 ## Usage
 
@@ -26,7 +25,6 @@ Messenger is a chat iOS app developed using SwiftUI and Firebase. It showcases r
 
 ## Screenshots
 
-Include screenshots of your app here to showcase its UI and features.
 
 ## Contributing
 
@@ -35,7 +33,3 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to customize this README file to better fit your project's specific details and requirements.
