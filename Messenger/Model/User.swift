@@ -6,6 +6,7 @@
 //
 
 import FirebaseFirestoreSwift
+import Foundation
 
 // TODO: 
 struct User: Identifiable, Decodable {
@@ -16,3 +17,5 @@ struct User: Identifiable, Decodable {
     let profileImageUrl: String
     
 }
+
+

@@ -41,6 +41,7 @@ struct SettingsView: View {
                             .background(Color.specBlue)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                     })
+                    .padding(.horizontal)
                     
                     Spacer()
                 }

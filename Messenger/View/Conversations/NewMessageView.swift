@@ -11,7 +11,9 @@ struct NewMessageView: View {
     @Binding var showChatView: Bool
     @State private var isEditing = false
     @State private var searchText = ""
+    @Binding var user: User?
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var viewModel = NewMessageViewModel()
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
@@ -22,12 +24,13 @@ struct NewMessageView: View {
                     }
                     
                 VStack(alignment:.leading) {
-                    ForEach((0...10), id: \.self) { _ in
+                    ForEach(viewModel.users) { user in
                         Button(action: {
                             showChatView.toggle()
+                            self.user = user
                             presentationMode.wrappedValue.dismiss()
                         }, label: {
-                            UserCell()
+                            UserCell(user: user)
                         })
                     }
                 }
@@ -37,5 +40,5 @@ struct NewMessageView: View {
 }
 
 #Preview {
-    NewMessageView(showChatView: .constant(true))
+    NewMessageView(showChatView: .constant(true), user: .constant(User.init(username: "TIM", fullname: "TIM COOK", email: "Tim@apple.com", profileImageUrl: "nil")) )
 }

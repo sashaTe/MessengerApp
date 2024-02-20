@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CustomInputView: View {
     @Binding var text: String
+    @Binding var isPhotoPickerShowing: Bool
     var action: () -> Void
     var body: some View {
         VStack {
@@ -21,10 +22,23 @@ struct CustomInputView: View {
                     .font(.body)
                     .frame(minHeight: 30)
                 
+                Button {
+                    
+                } label: {
+                   Image(systemName: "paperclip")
+                        .foregroundStyle(.white)
+                        .font(.title2)
+                }
+                .padding(.trailing, 5)
                 Button(action: {action()}, label: {
-                    Text("Send")
-                        .bold()
-                        .foregroundStyle(.accent)
+                    Image(systemName: "paperplane")
+                        .foregroundStyle(.black)
+                        .padding(5)
+                        .background(content: {
+                            Color.accentColor
+                        })
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .font(.title2)
                 })
             }
             .padding(.bottom, 8)

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SettingsHeader: View {
     let user: User
@@ -17,7 +18,7 @@ struct SettingsHeader: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             
             HStack {
-                Image(systemName: "person")
+                KFImage(URL(string: user.profileImageUrl ?? ""))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 65, height: 65)
@@ -26,7 +27,11 @@ struct SettingsHeader: View {
                 
                 VStack(alignment: .leading) {
                     Text(user.fullname)
+                        .foregroundStyle(.specPurple)
+                        .font(.headline)
                     Text("Online")
+                        .font(.callout)
+                        .opacity(0.9)
                 }
                 Spacer()
             }

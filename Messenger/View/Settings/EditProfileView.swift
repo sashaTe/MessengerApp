@@ -27,14 +27,17 @@ struct EditProfileView: View {
                                 profileImage
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 65, height: 65)
+                                    .frame(width: 50, height: 50)
                                     .clipShape(Circle())
+                                    .padding(.top)
                             } else {
                                 Image(systemName: "person")
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 65, height: 65)
+                                    .frame(width: 50, height: 50)
                                     .clipShape(Circle())
+                                    .padding(.top)
+
                             }
                             
                             Button {
@@ -85,6 +88,7 @@ struct EditProfileView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Edit Profile")
+        .navigationBarColor(UIColor(Color.accentColor))
     }
     func loadImage() {
         guard let selectedImage else {return}

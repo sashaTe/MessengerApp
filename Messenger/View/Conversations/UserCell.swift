@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UserCell: View {
+    let user: User
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 
                 //image
-                Image(systemName: "person")
+                KFImage(URL(string: user.profileImageUrl ?? ""))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 40, height: 40)
@@ -21,11 +23,11 @@ struct UserCell: View {
                     .foregroundStyle(.accent)
                 //message info
                 VStack(alignment: .leading) {
-                 Text("Tim Cook")
+                    Text(user.username)
                         .font(.caption2)
                         .bold()
                         .foregroundStyle(.white)
-                    Text("@timCook")
+                    Text(user.fullname)
                         .font(.caption)
                         .foregroundStyle(.white).opacity(0.7)
                 }
@@ -40,5 +42,7 @@ struct UserCell: View {
 }
 
 #Preview {
-    UserCell()
+    UserCell(
+        user: .init(username: "TIMCOOK", fullname: "TIM COOK", email: "tim@apple.com", profileImageUrl: "nil")
+    )
 }

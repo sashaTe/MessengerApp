@@ -12,7 +12,7 @@ struct MainTabView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     init() {
     UITabBar.appearance().backgroundColor = UIColor.specBlack
-        UITabBar.appearance().unselectedItemTintColor = UIColor.white
+    UITabBar.appearance().unselectedItemTintColor = UIColor.white
     
     }
     var body: some View {
@@ -25,30 +25,30 @@ struct MainTabView: View {
                         .onTapGesture {
                             selectedIndex = 0
                         }
-                            .tabItem { Image(systemName: "message") }
+                            .tabItem { Image(systemName: "text.bubble") }
                             .tag(0)
                         
                         ChannelsView()
                         .onTapGesture {
                             selectedIndex = 1
                         }
-                            .tabItem { Image(systemName: "bubble.left.and.bubble.right") }
+                            .tabItem { Image(systemName: "archivebox") }
                             .tag(1)
                         
                     SettingsView(user: user)
                         .onTapGesture {
                             selectedIndex = 2
                         }
-                            .tabItem { Image(systemName: "gear") }
+                            .tabItem { Image(systemName: "person.crop.square") }
                             .tag(2)
                             
                     }
                 .navigationTitle(tabTitle)
+                .navigationBarColor(UIColor(Color.accentColor))
+
 
                 
             }
-        } else {
-            Text("No user")
         }
         }
     var tabTitle: String {

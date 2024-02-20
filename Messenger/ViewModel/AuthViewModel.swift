@@ -16,6 +16,7 @@ class AuthViewModel: NSObject, ObservableObject {
     @Published var currentUser: User?
     private var tempCurrentUser: FirebaseAuth.User?
     
+    static let shared = AuthViewModel()
     
     override init() {
         super.init()
@@ -31,6 +32,7 @@ class AuthViewModel: NSObject, ObservableObject {
             
             guard let user = result?.user else { return }
             self.userSession = user
+            self.fetchUser()
         }
     }
     
@@ -47,7 +49,7 @@ class AuthViewModel: NSObject, ObservableObject {
             let data: [String: Any] = ["email": email,
                                        "username": username,
                                        "fullname": fullName]
-            Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
+            collectionUsers.document(user.uid).setData(data) { _ in
                 self.didAuthenticateUser = true
             }
         }
@@ -61,7 +63,7 @@ class AuthViewModel: NSObject, ObservableObject {
             print ("NO user uid found")
             return}
         ImageUploader.uploadImage(image: image) { imageUrl in
-            Firestore.firestore().collection("users").document(uid).updateData(["profileImageUrl" : imageUrl]) { _ in
+            collectionUsers.document(uid).updateData(["profileImageUrl" : imageUrl]) { _ in
                 self.userSession = self.tempCurrentUser
             }
         }
@@ -69,12 +71,18 @@ class AuthViewModel: NSObject, ObservableObject {
     
     func signOut() {
         self.userSession = nil
-        try? Auth.auth().signOut()
+        do {
+            try Auth.auth().signOut()
+            print("signout")
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
     }
     
     func fetchUser() {
         guard let uid = userSession?.uid else { return }
-        Firestore.firestore().collection("users").document().getDocument { snapshot, _ in
+        collectionUsers.document(uid).getDocument { snapshot, _ in
             guard let user = try? snapshot?.data(as: User.self) else { return }
             self.currentUser = user
             

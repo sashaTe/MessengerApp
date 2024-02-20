@@ -26,3 +26,10 @@ extension View {
     }
 }
 
+
+
+extension View {
+    func navigationBarColor(_ color: UIColor) -> some View {
+        self.modifier(NavigationBarColorModifier(color: color))
+    }
+}
