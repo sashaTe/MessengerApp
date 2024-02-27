@@ -2,7 +2,7 @@
 
 Messenger is a chat iOS app developed using SwiftUI and Firebase. It showcases real-time data synchronization, user authentication, and interactive messaging features for an engaging user experience.
 
-## Features
+## Technologies
 
 - **SwiftUI & Firebase:** Developed using SwiftUI for the UI and Firebase for real-time data synchronization and user authentication.
 - **Real-time Data Synchronization:** Demonstrates proficiency in Firebase to enable real-time updates of messages.
