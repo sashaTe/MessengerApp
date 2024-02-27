@@ -16,14 +16,6 @@ Messenger is a chat iOS app developed using SwiftUI and Firebase. It showcases r
 1. Firebase: For real-time database and authentication.
 2. Kingfisher: For efficient image loading and caching.
 
-## Usage
-
-1. Sign up or log in with your credentials.
-2. Start a new chat or join an existing one.
-3. Send and receive messages in real-time.
-4. Enjoy the interactive messaging features like sending images and emojis.
-
-
 ## Screenshots
 
 <div align="center">
@@ -37,7 +29,5 @@ Messenger is a chat iOS app developed using SwiftUI and Firebase. It showcases r
   <img src="https://github.com/sashaTe/MessengerApp/assets/116722794/d295e6f0-98c9-417a-8172-a4dc1b8e07bf.png" alt="Screenshot 5" width="25%">
 </div>
 
-## Contributing
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
 
